@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cumg5myknkgys"]
+
+[ext_resource type="FontFile" uid="uid://ce8q33lqaun20" path="res://assets/fonts/Impact.ttf" id="1_huoqj"]
+[ext_resource type="Script" uid="uid://ce363yoq4si2p" path="res://scenes/ui/display_goal/display_goal.gd" id="1_yf2m2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_huoqj")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_ojyda"]
+font = ExtResource("1_huoqj")
+font_size = 44
+
+[node name="DisplayGOAL" type="Control" unique_id=1348475186]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_yf2m2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=730469733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=516509657]
+layout_mode = 2
+
+[node name="GOAL BY" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1906432391]
+layout_mode = 2
+text = "¡GOAL BY"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Player 1_2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=753793318]
+layout_mode = 2
+text = "PLAYER!"
+label_settings = SubResource("LabelSettings_ojyda")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=284502835]
+wait_time = 3.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

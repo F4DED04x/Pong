@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0mt7l76nqgk5"]
+
+[ext_resource type="Texture2D" uid="uid://bjoqarbiwmcy1" path="res://assets/sprites/Computer.png" id="1_ebnxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86djp"]
+size = Vector2(18, 120)
+
+[node name="CPU" type="CharacterBody2D" unique_id=30214560]
+scale = Vector2(1.75, 1.75)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223833981]
+texture = ExtResource("1_ebnxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083475713]
+shape = SubResource("RectangleShape2D_86djp")

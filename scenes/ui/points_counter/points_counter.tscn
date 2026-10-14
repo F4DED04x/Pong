@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://qfbilq5ev7l"]
+
+[ext_resource type="Texture2D" uid="uid://bmiymn8uat2l3" path="res://assets/sprites/ScoreBar.png" id="1_6ob0j"]
+[ext_resource type="FontFile" uid="uid://ce8q33lqaun20" path="res://assets/fonts/Impact.ttf" id="2_yxe8r"]
+[ext_resource type="Script" uid="uid://bo3f8f3ymet0f" path="res://scenes/ui/points_counter/label_p1.gd" id="3_lasgr"]
+[ext_resource type="Script" uid="uid://rnhukbugbykn" path="res://scenes/ui/points_counter/label_p2.gd" id="4_cr1tk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ob0j"]
+font = ExtResource("2_yxe8r")
+font_size = 54
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Points Counter" type="Control" unique_id=1003474292]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=537136418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -556.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" type="VBoxContainer" parent="HBoxContainer" unique_id=1514340482]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player1" unique_id=2092302185]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_6ob0j")
+flip_h = true
+
+[node name="Player2" type="VBoxContainer" parent="HBoxContainer" unique_id=1584517742]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player2" unique_id=659115718]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_6ob0j")
+
+[node name="Players Labels" type="Control" parent="." unique_id=1409042904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="P1" type="Control" parent="Players Labels" unique_id=63004581]
+layout_mode = 1
+anchor_left = 0.25520834
+anchor_top = 0.021604938
+anchor_right = 0.25520834
+anchor_bottom = 0.021604938
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Players Labels/P1" unique_id=1056789431]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -10.0
+offset_right = -53.0
+offset_bottom = 13.0
+text = "Player  1: 0"
+label_settings = SubResource("LabelSettings_6ob0j")
+script = ExtResource("3_lasgr")
+
+[node name="P2" type="Control" parent="Players Labels" unique_id=457047426]
+layout_mode = 1
+anchor_left = 0.7864583
+anchor_top = 0.026234567
+anchor_right = 0.7864583
+anchor_bottom = 0.026234567
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Players Labels/P2" unique_id=847889464]
+layout_mode = 0
+offset_left = -178.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 58.0
+text = "Player 2: 0"
+label_settings = SubResource("LabelSettings_6ob0j")
+script = ExtResource("4_cr1tk")

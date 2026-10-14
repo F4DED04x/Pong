@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b1brwqpsy3tpd"]
+
+[ext_resource type="Script" uid="uid://cgekme124ywf8" path="res://scenes/players/player_2.gd" id="1_m23mk"]
+[ext_resource type="Texture2D" uid="uid://bjoqarbiwmcy1" path="res://assets/sprites/Computer.png" id="2_q4ib7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86djp"]
+size = Vector2(18, 120)
+
+[node name="Player2" type="CharacterBody2D" unique_id=30214560]
+rotation = 3.1415927
+scale = Vector2(1.75, 1.75)
+script = ExtResource("1_m23mk")
+speed_second_player = 375.0
+position_x_asigned = 1060.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223833981]
+texture = ExtResource("2_q4ib7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083475713]
+shape = SubResource("RectangleShape2D_86djp")
