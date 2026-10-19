@@ -7,6 +7,11 @@ var points_player2: int
 
 var goal_by: String
 
+const STAGES = {
+	0: preload("res://scenes/enviroments/level_with_cpu.tscn"),
+	1: preload("res://scenes/enviroments/level_with_player2.tscn")
+}
+
 func _ready():
 	SignalManager.goal_player1.connect(on_goal_by_p1)
 	SignalManager.goal_player2.connect(on_goal_by_p2)

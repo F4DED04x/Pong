@@ -47,6 +47,9 @@ label_settings = SubResource("LabelSettings_ojyda")
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=284502835]
-wait_time = 3.5
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1218051993]
+volume_db = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

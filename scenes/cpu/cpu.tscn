@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://b0mt7l76nqgk5"]
 
+[ext_resource type="Script" uid="uid://b8p35kw3jj8a6" path="res://scenes/cpu/cpu.gd" id="1_86djp"]
 [ext_resource type="Texture2D" uid="uid://bjoqarbiwmcy1" path="res://assets/sprites/Computer.png" id="1_ebnxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86djp"]
 size = Vector2(18, 120)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g08as"]
+size = Vector2(160.85718, 369.143)
+
 [node name="CPU" type="CharacterBody2D" unique_id=30214560]
 scale = Vector2(1.75, 1.75)
+script = ExtResource("1_86djp")
+speed_cpu = 340.0
+speed_slowed = 280.0
+vision_cpu = 550.0
+position_x_asigned = 1060.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223833981]
@@ -14,3 +23,13 @@ texture = ExtResource("1_ebnxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083475713]
 shape = SubResource("RectangleShape2D_86djp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=481937317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1282250183]
+position = Vector2(70.42854, -1.7142487)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_g08as")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

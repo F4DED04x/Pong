@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://b7ti8ut8yg7h5"]
+
+[ext_resource type="FontFile" uid="uid://r1fbnw4wmh2c" path="res://assets/fonts/Freedom-nZ4J.otf" id="1_886mr"]
+[ext_resource type="FontFile" uid="uid://ce8q33lqaun20" path="res://assets/fonts/Impact.ttf" id="1_d4nwg"]
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_886mr")
+HeaderLarge/colors/font_color = Color(0, 0, 0, 1)
+HeaderLarge/colors/font_outline_color = Color(1, 1, 1, 1)
+HeaderLarge/constants/outline_size = 17
+HeaderLarge/font_sizes/font_size = 150
+HeaderLarge/fonts/font = ExtResource("1_d4nwg")

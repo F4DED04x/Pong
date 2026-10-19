@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://6aho2h86p3ri"]
+
+[ext_resource type="Texture2D" uid="uid://cobm0vueehihy" path="res://assets/sprites/Board.png" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://ce1fsjiu4irq2" path="res://scenes/enviroments/left_porte´s_lodge.gd" id="2_b1x3f"]
+[ext_resource type="Script" uid="uid://qd4qacuet3n3" path="res://scenes/enviroments/marker_2d.gd" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://6h3umbkmcg2f" path="res://scenes/enviroments/porte´s_lodge.gd" id="4_hujxm"]
+[ext_resource type="PackedScene" uid="uid://djnrx1fof3kkt" path="res://scenes/ball/ball.tscn" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://bacshhkdbxpt7" path="res://scenes/players/player.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://b1brwqpsy3tpd" path="res://scenes/players/player2.tscn" id="6_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://cumg5myknkgys" path="res://scenes/ui/display_goal/display_goal.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://qfbilq5ev7l" path="res://scenes/ui/points_counter/points_counter.tscn" id="9_b1x3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(1181.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(59.5, 557)
+
+[node name="Main" type="Node2D" unique_id=1394204783]
+metadata/_edit_group_ = true
+
+[node name="Walls" type="Node2D" parent="." unique_id=1169080696]
+metadata/_edit_group_ = true
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=889157117]
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls/TopWall" unique_id=746204424]
+position = Vector2(576.5, 82)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=247856060]
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=2057545170]
+position = Vector2(577.25, 657.06)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="SpawnerBall" type="Marker2D" parent="." unique_id=2045169313]
+position = Vector2(576, 375)
+script = ExtResource("2_iuonh")
+
+[node name="Porter\'s lodge" type="Node2D" parent="." unique_id=246124353]
+
+[node name="Left porte´s lodge" type="Area2D" parent="Porter\'s lodge" unique_id=1904334312]
+script = ExtResource("2_b1x3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porter\'s lodge/Left porte´s lodge" unique_id=77677396]
+position = Vector2(-31, 370)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="Right porte´s lodge2" type="Area2D" parent="Porter\'s lodge" unique_id=209541436]
+script = ExtResource("4_hujxm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Porter\'s lodge/Right porte´s lodge2" unique_id=830051996]
+position = Vector2(1182, 375)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="Ball" parent="." unique_id=536990186 instance=ExtResource("4_l3cfh")]
+position = Vector2(580, 384)
+
+[node name="Player" parent="." unique_id=1092124433 instance=ExtResource("5_6q06x")]
+position = Vector2(150, 375)
+
+[node name="Player2" parent="." unique_id=30214560 instance=ExtResource("6_ow5a4")]
+position = Vector2(1000, 375)
+position_x_asigned = 1000.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1577024160]
+
+[node name="HUD" type="Control" parent="HUD" unique_id=835023031]
+z_index = -20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DisplayGOAL" parent="HUD/HUD" unique_id=1348475186 instance=ExtResource("8_yyfjg")]
+layout_mode = 1
+scale = Vector2(1.5, 1.5)
+
+[node name="Points Counter" parent="HUD/HUD" unique_id=1003474292 instance=ExtResource("9_b1x3f")]
+layout_mode = 1
+
+[node name="BoardLayer" type="CanvasLayer" parent="." unique_id=284734511]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="BoardLayer" unique_id=1368651838]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hyk8p")
+
+[connection signal="area_entered" from="Porter\'s lodge/Left porte´s lodge" to="Porter\'s lodge/Left porte´s lodge" method="_on_area_entered"]
+[connection signal="area_entered" from="Porter\'s lodge/Right porte´s lodge2" to="Porter\'s lodge/Right porte´s lodge2" method="_on_area_entered"]

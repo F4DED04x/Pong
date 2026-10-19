@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pong"
-run/main_scene="uid://6aho2h86p3ri"
+run/main_scene="uid://dv1ev2yvknnjr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,11 +19,16 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://mpj0h0j4jbi"
 SignalManager="*uid://ecc7ajxi8g6y"
+AudioManager="*uid://berumq3hikjtq"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://b7ti8ut8yg7h5"
 
 [input]
 

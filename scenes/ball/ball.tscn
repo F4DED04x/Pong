@@ -6,11 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 148.05405
 
-[node name="Ball" type="CharacterBody2D" unique_id=536990186]
+[node name="Ball" type="CharacterBody2D" unique_id=536990186 groups=["ball"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_nv6q1")
-speed_ball = 400.0
-max_speed_ball = 750.0
+speed_ball = 460.0
+max_speed_ball = 800.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=833827503]
@@ -27,3 +27,6 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=474065626]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1578737031]
+volume_db = 15.0
